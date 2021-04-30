@@ -11,7 +11,7 @@ from resources.store_list import StoreList
 from auth.auth import authenticate, identity
 
 server = Flask(__name__)
-server.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///data/data.db')
+server.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URI', 'sqlite:///data/data.db')
 server.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 server.secret_key = 'secret_key'
 server.config['JWT_EXPIRATION_DELTA'] = timedelta(seconds=3600)
